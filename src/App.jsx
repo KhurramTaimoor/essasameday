@@ -83,7 +83,6 @@ const reviews = [
 
 const stats = [
   { value: "5000+", label: "Happy Clients" },
-  { value: "10+", label: "Years Experience" },
   { value: "UK Wide", label: "Coverage" },
   { value: "24/7", label: "Support" },
 ];
@@ -143,9 +142,7 @@ export default function App() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
-
     window.addEventListener("scroll", onScroll);
-
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -175,18 +172,10 @@ export default function App() {
           </button>
 
           <nav className={`navLinks ${menuOpen ? "active" : ""}`}>
-            <a href="#home" onClick={closeMenu}>
-              Home
-            </a>
-            <a href="#about" onClick={closeMenu}>
-              About Us
-            </a>
-            <a href="#services" onClick={closeMenu}>
-              Our Services
-            </a>
-            <a href="#quote" className="quoteBtn" onClick={closeMenu}>
-              Free Quote
-            </a>
+            <a href="#home" onClick={closeMenu}>Home</a>
+            <a href="#about" onClick={closeMenu}>About Us</a>
+            <a href="#services" onClick={closeMenu}>Our Services</a>
+            <a href="#quote" className="quoteBtn" onClick={closeMenu}>Free Quote</a>
           </nav>
         </div>
       </header>
@@ -216,12 +205,8 @@ export default function App() {
               </p>
 
               <div className="heroButtons">
-                <a href="#quote" className="primaryBtn">
-                  Get Free Quote
-                </a>
-                <a href="#services" className="outlineBtn">
-                  View Services
-                </a>
+                <a href="#quote" className="primaryBtn">Get Free Quote</a>
+                <a href="#services" className="outlineBtn">View Services</a>
               </div>
 
               <div className="heroStats">
@@ -239,12 +224,10 @@ export default function App() {
                 src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80"
                 alt="Same day moving truck"
               />
-
               <div className="heroBadge topBadge">
                 <span>✓</span>
                 Insured Handling
               </div>
-
               <div className="heroBadge bottomBadge">
                 <span>★</span>
                 Trusted Movers
@@ -261,15 +244,9 @@ export default function App() {
                 src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=80"
                 alt="Warehouse and logistics"
               />
-
               <div className="aboutFloat">
                 <strong>Reliable</strong>
                 <span>Moving & delivery support</span>
-              </div>
-
-              <div className="aboutBadge2">
-                <strong>10+</strong>
-                <span>Years of service</span>
               </div>
             </RevealDiv>
 
@@ -332,11 +309,9 @@ export default function App() {
                     <img src={service.image} alt={service.title} />
                     <div className="serviceIcon">{service.icon}</div>
                   </div>
-
                   <div className="serviceBody">
                     <h3>{service.title}</h3>
                     <p>{service.text}</p>
-
                     <a href="#quote" className="serviceLink">
                       Book Service <span className="arrow">→</span>
                     </a>
@@ -354,11 +329,8 @@ export default function App() {
               <p>Need urgent transport?</p>
               <h2>Book your same-day moving service today</h2>
             </RevealDiv>
-
             <RevealDiv delay={0.15}>
-              <a href="#quote" className="whiteBtn">
-                Get Free Quote
-              </a>
+              <a href="#quote" className="whiteBtn">Get Free Quote</a>
             </RevealDiv>
           </div>
         </section>
@@ -382,7 +354,6 @@ export default function App() {
                   <div className="processEmoji">{step.icon}</div>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
-
                   {i < steps.length - 1 && (
                     <div className="processArrow">→</div>
                   )}
@@ -409,9 +380,7 @@ export default function App() {
                 >
                   <div className="reviewQuote">"</div>
                   <div className="stars">★★★★★</div>
-
                   <p>"{review.text}"</p>
-
                   <div className="reviewerInfo">
                     <div className="reviewerAvatar">{review.name[0]}</div>
                     <div>
@@ -430,15 +399,11 @@ export default function App() {
           <div className="container quoteGrid">
             <RevealDiv className="quoteText">
               <p className="sectionLabel light">Free Quote</p>
-
               <h2>Request your moving quote</h2>
-
               <p>
                 Send us your moving details and our team will contact you with a
                 suitable quote. Fast response guaranteed.
               </p>
-
-              {/* Contact details only here with form */}
               <div className="quoteContact">
                 <a href={`tel:${cleanPhone}`} className="quoteContactItem">
                   <div className="quoteContactIcon">📞</div>
@@ -447,11 +412,7 @@ export default function App() {
                     <strong>{contactDetails.phone}</strong>
                   </div>
                 </a>
-
-                <a
-                  href={`mailto:${contactDetails.email}`}
-                  className="quoteContactItem"
-                >
+                <a href={`mailto:${contactDetails.email}`} className="quoteContactItem">
                   <div className="quoteContactIcon">✉️</div>
                   <div>
                     <span>Email Us</span>
@@ -472,39 +433,20 @@ export default function App() {
                 ) : (
                   <>
                     <h3 className="formTitle">Get Your Free Quote</h3>
-
                     <div className="formRow">
                       <input type="text" placeholder="Your Name *" required />
-                      <input
-                        type="email"
-                        placeholder="Your Email *"
-                        required
-                      />
+                      <input type="email" placeholder="Your Email *" required />
                     </div>
-
                     <input type="tel" placeholder="Phone Number" />
-
                     <select defaultValue="">
-                      <option value="" disabled>
-                        Select Service
-                      </option>
+                      <option value="" disabled>Select Service</option>
                       <option>Residential Removals</option>
                       <option>Office Removals</option>
                       <option>Same Day Delivery</option>
                       <option>Packing Service</option>
                     </select>
-
-                    <textarea
-                      rows="4"
-                      placeholder="Your Message *"
-                      required
-                    />
-
-                    <button
-                      type="button"
-                      onClick={handleSubmit}
-                      className="submitBtn"
-                    >
+                    <textarea rows="4" placeholder="Your Message *" required />
+                    <button type="button" onClick={handleSubmit} className="submitBtn">
                       Submit Request <span>→</span>
                     </button>
                   </>
@@ -515,21 +457,16 @@ export default function App() {
         </section>
       </main>
 
-      {/* FOOTER - contact details removed */}
+      {/* FOOTER */}
       <footer className="footer">
         <div className="footerTopStrip">
           <div className="container footerTopContent">
             <div className="footerTopLeft">
               <h3>Ready to move? Let's talk!</h3>
-              <p>
-                Fast, reliable, and professional moving services across the UK.
-              </p>
+              <p>Fast, reliable, and professional moving services across the UK.</p>
             </div>
-
             <div className="footerTopRight">
-              <a href="#quote" className="whiteBtn">
-                Get Free Quote
-              </a>
+              <a href="#quote" className="whiteBtn">Get Free Quote</a>
             </div>
           </div>
         </div>
@@ -543,17 +480,13 @@ export default function App() {
                   essa<span>sameday</span>
                 </span>
               </a>
-
               <p>
                 Fast, reliable, and professional same-day moving and delivery
                 services across the UK. Your trusted moving partner.
               </p>
-
               <div className="footerSocials">
                 {["f", "in", "tw", "ig"].map((s) => (
-                  <a key={s} href="#" className="socialBtn">
-                    {s}
-                  </a>
+                  <a key={s} href="#" className="socialBtn">{s}</a>
                 ))}
               </div>
             </div>
@@ -585,10 +518,7 @@ export default function App() {
 
         <div className="copyright">
           <div className="container copyrightInner">
-            <span>
-              © {new Date().getFullYear()} essasameday. All rights reserved.
-            </span>
-
+            <span>© {new Date().getFullYear()} essasameday. All rights reserved.</span>
             <div className="copyrightLinks">
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Use</a>
